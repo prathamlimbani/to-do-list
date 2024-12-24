@@ -1,0 +1,116 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* App Container Styling */
+.app-container {
+  width: 350px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Heading */
+h1 {
+  text-align: center;
+  color: #333;
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+/* Input and Button Container */
+.input-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+#newTask {
+  width: 70%;
+  padding: 10px;
+  font-size: 14px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+#addTaskButton {
+  width: 25%;
+  padding: 10px;
+  font-size: 14px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#addTaskButton:hover {
+  background-color: #218838;
+}
+
+/* Task List Styling */
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.task-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+  font-size: 16px;
+}
+
+.task-text {
+  flex-grow: 1;
+}
+
+.completed .task-text {
+  text-decoration: line-through;
+  color: #888;
+}
+
+.delete-btn {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.delete-btn:hover {
+  background-color: #c82333;
+}
+
+@media (max-width: 400px) {
+  .app-container {
+    width: 100%;
+    padding: 10px;
+  }
+
+  #newTask {
+    width: 60%;
+  }
+
+  #addTaskButton {
+    width: 35%;
+  }
+}
