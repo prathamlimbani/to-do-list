@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To-Do List App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-container">
+    <h1>To-Do List</h1>
+    <div class="input-container">
+      <input type="text" id="newTask" placeholder="Add a new task..." />
+      <button id="addTaskButton">Add Task</button>
+    </div>
+    <ul id="taskList"></ul>
+  </div>
+
+  <script src="script.js"></script>
+
+  <script>
+    document.getElementById('addTaskButton').addEventListener('click', function() {
+      const taskInput = document.getElementById('newTask');
+      const taskText = taskInput.value.trim();
+
+      if (taskText) {
+        const taskElement = document.createElement('li');
+        taskElement.classList.add('task-item');
+        taskElement.innerHTML = `
+          <span class="task-text">${taskText}</span>
+          <button class="delete-btn">Delete</button>
+        `;
+        
+        taskElement.querySelector('.task-text').addEventListener('click', function() {
+          taskElement.classList.toggle('completed');
+        });
+        
+        taskElement.querySelector('.delete-btn').addEventListener('click', function() {
+          taskElement.remove();
+        });
+
+        document.getElementById('taskList').appendChild(taskElement);
+        taskInput.value = '';
+      }
+    });
+
+    document.getElementById('newTask').addEventListener('keypress', function(e) {
+      if (e.key === 'Enter') {
+        document.getElementById('addTaskButton').click();
+      }
+    });
+  </script>
+</body>
+</html>
